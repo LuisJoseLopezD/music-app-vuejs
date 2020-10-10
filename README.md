@@ -1,6 +1,6 @@
 ![](captura.png)
 
-# test02
+# Music App
 
 ## Project setup
 ```
