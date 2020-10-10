@@ -24,8 +24,6 @@
   		</section>
   	</main>
 
-  	<footer>Canserbero tribute by @luisjoselopezd</footer>
-
   </div>
 
 </template>
@@ -220,12 +218,6 @@ export default {
 		color: #FFF;
 		background-image: linear-gradient(to right, #CC2E5D, #FF5858);
 		border-radius: 8px;
-	}
-
-	footer {
-		text-align: center;
-		font-size: 12px;
-		color: #212121;
 	}
 
 </style>
