@@ -24,6 +24,8 @@
   		</section>
   	</main>
 
+  	<footer>Canserbero tribute by @luisjoselopezd</footer>
+
   </div>
 
 </template>
@@ -54,6 +56,14 @@ export default {
   			}
   		},
 
+  	//stop music when routes changes
+
+  	beforeRouteLeave (to, from, next) {
+		this.player.pause();
+		this.isPlaying = false;
+		next();
+		},	
+
   methods: {
   	play (song) {
   		if (typeof song.src != "undefined"){
@@ -76,6 +86,7 @@ export default {
 
   		this.isPlaying = true;
   	},
+
   	pause () {
   		this.player.pause();
   		this.isPlaying = false;
@@ -218,6 +229,12 @@ export default {
 		color: #FFF;
 		background-image: linear-gradient(to right, #CC2E5D, #FF5858);
 		border-radius: 8px;
+	}
+
+	footer {
+		text-align: center;
+		font-size: 12px;
+		color: #212121;
 	}
 
 </style>
