@@ -235,6 +235,7 @@ export default {
 		text-align: center;
 		font-size: 12px;
 		color: #212121;
+		padding: 20px;
 	}
 
 </style>
