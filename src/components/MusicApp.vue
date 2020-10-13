@@ -10,10 +10,10 @@
       <section class="player">
         <h2 class="song-title">{{ current.title }} - <span>{{ current.artist }}</span></h2>
         <div class="control">
-          <button class="prev" @click="prev">Prev</button>
-          <button class="play" v-if="!isPlaying" @click="play">Play</button>
-          <button class="pause" v-else @click="pause">Pause</button>
-          <button class="next" @click="next">Next</button>
+          <img class="prev" @click="prev" src="https://img.icons8.com/windows/64/000000/circled-chevron-right.png"/>
+          <img class="play" v-if="!isPlaying" @click="play" src="https://img.icons8.com/windows/64/000000/play.png"/>
+          <img class="pause" v-else @click="pause" src="https://img.icons8.com/windows/64/000000/pause.png"/>
+          <img class="next" @click="next" src="https://img.icons8.com/windows/64/000000/circled-chevron-right.png"/>
         </div>
       </section>
   		<section class="playlist">
@@ -178,26 +178,19 @@ export default {
 
 	button:hover {
 		opacity: 0.8;
-	}	
-
-	.play, .pause {
-		font-size: 20px;
-		font-weight: 700;
-		padding: 15px 25px;
-		margin: 0px 15px;
-		border-radius: 8px;
-		color: #FFF;
-		background-color: #CC2E5D;
 	}
 
-	.next, .prev {
-		font-size: 16px;
-		font-weight: 700;
-		padding: 10px 25px;
-		margin: 0px 15px;
-		border-radius: 6px;
-		color: #FFF;
-		background-color: #FF5858;		
+	.play, .pause, .next {
+		cursor: pointer;
+	}	
+
+	.prev {
+		-webkit-transform: scaleX(-1);
+	    -moz-transform: scaleX(-1);
+	    transform: scaleX(-1);
+	    filter: FlipH;
+	    -ms-filter: "FlipH";
+	    cursor: pointer;		
 	}
 
 	.playlist {
@@ -221,21 +214,17 @@ export default {
 		cursor: pointer;
 	}
 
-	.playlist .song:hover {
-		color: #FF5858;
-	}
-
 	.playlist .song.playing {
 		color: #FFF;
-		background-image: linear-gradient(to right, #CC2E5D, #FF5858);
+		background-color: #1db954;
 		border-radius: 8px;
 	}
 
 	footer {
+		padding: 20px;
 		text-align: center;
 		font-size: 12px;
 		color: #212121;
-		padding: 20px;
 	}
 
 </style>
